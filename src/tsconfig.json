@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -15,6 +15,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "resolveJsonModule": true,
+    "moduleResolution": "node",
     "isolatedModules": true,
     "jsx": "preserve"
   },
@@ -22,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "utils/highlight.js"  ],
   "exclude": [
     "node_modules"
   ]

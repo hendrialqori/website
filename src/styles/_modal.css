@@ -1,0 +1,53 @@
+.modal__wrapper {
+    position: fixed;
+    inset: 0;
+    background-color: rgb(0,0,0,.9);
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .6s ease;
+}
+
+.modal__close {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal__wrapper button {
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 5.5px 6px ;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.close__icon {
+    color: white;
+    font-size: 1.4rem;
+}
+
+
+.modal__wrapper form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input__text {
+    width: min(100% - 2rem, 400px);
+    margin-inline: auto;
+    outline: none;
+    border: none;
+    padding: 40px 20px 5px 20px;
+    font-size: 2rem;
+    border-bottom:5px solid white  ;
+    background: transparent;
+    color: white;
+}

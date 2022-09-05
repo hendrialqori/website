@@ -1,0 +1,159 @@
+.container {
+    margin-top: 20px;
+}
+
+.__article {
+    margin-top: 30px;
+}
+
+.__head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.__title {
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 0.01px;
+}
+
+.__information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8rem;
+    font-weight: 400;
+    color: rgb(186, 186, 186);
+    width: 100%;
+}
+
+.__author {
+    margin-block: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.__author img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.__author p, .__read p {
+    font-size: .8rem;
+}
+
+.mdx__context {
+    margin-bottom: 50px;
+}
+.mdx__context > * {
+    margin-block: 4px;
+}
+
+.btn__copy {
+    display: flex; 
+    gap: 5px;
+    align-items: center;
+    padding: 2px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: rgb(186, 186, 186);
+    cursor: pointer;
+}
+
+.btn__copy svg {
+    font-size: 1rem;
+}
+.btn__copy p {
+    font-size: .7rem !important;
+    font-weight: 400;
+    padding-right: 2px;
+}
+
+.mdx__context h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.mdx__context h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.mdx__context h3 {
+    font-size: 18.74px;
+    font-weight: 600;
+}
+
+.mdx__context a {
+    color: rgb(97, 176, 255);
+    font-weight: 600;
+}
+
+.mdx__context a:hover {
+    color: rgb(148, 199, 250);
+}
+
+.mdx__context p {
+    font-size: 15.3px;
+    line-height: 27px;
+}
+
+.mdx__context ul, .mdx__context ol {
+    font-size: 15px;
+    margin-left: 29px;
+    font-weight: 800;
+    width: max-content;
+}
+
+.mdx__context ul {
+    list-style-type: disc;
+}
+
+.mdx__context ol {
+    list-style-type: decimal;
+}
+
+.mdx__context ul > li , .mdx__context ol > li {
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.mdx__context br {
+    margin-bottom: 10px;
+}
+
+.mdx__context code {
+    border-radius: 10px;
+    padding-block: 20px;
+}
+.mdx__context span {
+    line-height: 24px;
+}
+
+.mdx__context blockquote {
+    border-left: 4px solid white;
+    padding: 10px;
+    margin-block: 15px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+@media (max-width:425px) {
+    .__title {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 35px;
+        letter-spacing: 0.01px;
+    }
+    .__author p, .__read p {
+        font-size: .6rem;
+    }
+}
