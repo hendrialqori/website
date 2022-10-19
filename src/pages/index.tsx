@@ -1,57 +1,37 @@
 import type { NextPage, GetStaticProps } from 'next'
-import Link from 'next/link'
-import Layout from '../component/layout'
-import style from '../styles/Home.module.css'
-import { Card } from '../component/card'
-import { BsArrowRight } from 'react-icons/bs'
+import Layout from '../components/layout'
+import { ArticleCard } from '../components/articleCard'
+import type { ArticlesProps } from '../types'
 
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-interface Props {
-  articles : article[]
-}
-
-interface article {
-    title: string;
-    tags: string[];
-    created: string;
-    read: string,
-    image?: string,
-    slug: string 
-}
-
-const Home: NextPage<Props> = ({ articles }) => {
+const Home: NextPage<ArticlesProps> = ({ articles }) => {
+  const Article = articles.slice(0, 2)
   return (
-    <Layout title='Tricky &#8226; home'>
-      <section className={style['container']} aria-label='home-container'> 
-          <header className={style['head__title']}>
-            <h1><span>tricky</span> | Hendri Alqori blog&lsquo;s</h1>
-            <p>IT Enthusianst & Frontend web developer</p>
-            <p>Membuat artikel tentang Web Development dan <br /> berbagi tips tentang itu</p>
-          </header>
-          <section className={style['articles__wrapper']}>
-            <h2>Postingan terbaru</h2>
-            <div className={style['articles__list__wrapper']}>
-              {
-                articles.map((obj, i) => (
-                  <Card
-                    key={i}
-                    title={obj.title}
-                    created={obj.created}
-                    tags={obj.tags}
-                    slug={obj.slug}
-                  />
-                ))
-              }
-            </div>
-            <Link href={'/blog'}>
-              <span className={style['link_all_post']}>
-                <BsArrowRight /> 
-                <p>semua post</p>
-              </span>
-            </Link>
+    <Layout title='Tricky | home'>
+      <section className=''>
+        <section className='mt-20' aria-label='up-side'>
+          <section className='text-black dark:text-gray-200'>
+            <h1 className='text-2xl font-extrabold'>Hi there, <br /> I&apos;m Hendri Alqori</h1>
+            <h2 className='text-2xl font-extrabold'>Welcome to my personal website, <span className='text-sky-500'>Enjoy it!</span></h2>
+          </section>
+          </section>
+          <section className='mt-10' aria-label='down-side'>
+            <h3 className='text-xl font-semibold my-5 text-sky-400 dark:text-sky-400'>
+              #recentPost
+            </h3>
+            <section className='flex flex-wrap gap-3'>
+              {Article.map((article, i) => (
+                <ArticleCard 
+                  key={i} 
+                  {...article} 
+                  size={typeof window !== "undefined" 
+                  && window.innerWidth <= 424 ? 'article' : 'card'}
+                 />
+              ))}
+            </section>
           </section>
       </section>
     </Layout>

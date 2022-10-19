@@ -12,6 +12,7 @@
     "@mdx-js/loader": "^2.1.3",
     "@mdx-js/react": "^2.1.3",
     "@next/mdx": "^12.2.5",
+    "framer-motion": "^7.5.4",
     "gray-matter": "^4.0.3",
     "next": "12.2.5",
     "next-mdx-remote": "^4.1.0",
@@ -19,7 +20,9 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "react-syntax-highlighter": "^15.5.0",
+    "rehype-code-titles": "^1.1.0",
     "rehype-highlight": "^5.0.2",
+    "rehype-prism-plus": "^1.5.0",
     "sharp": "^0.30.7"
   },
   "devDependencies": {
@@ -27,8 +30,11 @@
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/react-syntax-highlighter": "^15.5.5",
+    "autoprefixer": "^10.4.12",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.7.4"
   }
 }

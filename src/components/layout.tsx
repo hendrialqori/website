@@ -1,11 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Navigate } from './navigate'
-import { ModalSeach } from './search'
-import { Footer } from './foot'
-import { HiOutlineArrowNarrowUp } from 'react-icons/hi'
-import style from '../styles/Layout.module.css'
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Footer } from '../components/footer'
 
 
 interface LayoutProps {
@@ -14,10 +13,10 @@ interface LayoutProps {
 }
 
 const Layout:NextPage<LayoutProps> = ({ children, title }) => {
-
   const [isShowBtnToTop, setShowBtnToTop] = useState<boolean>(false)
+  const router = useRouter()
 
-  useLayoutEffect(()=> {
+  useEffect(()=> {
     window.addEventListener('scroll', toTopEvent)
 
     return () => {
@@ -40,8 +39,8 @@ const Layout:NextPage<LayoutProps> = ({ children, title }) => {
   }
 
   return (
-    <div className={style['main-wrapper']}>
-        <ModalSeach />
+    <div className='dark:bg-dark'>
+        {/* <ModalSeach /> */}
         <Head>
             <title>{ title }</title>
             <link rel="icon" href="/logo.svg" />
@@ -57,18 +56,28 @@ const Layout:NextPage<LayoutProps> = ({ children, title }) => {
         </Head>
 
         <Navigate />
-          <main className={style['main-container']}>
+        <AnimatePresence>
+          <motion.div
+            aria-label='page-motion-animate-wrapper'
+            key={router.route}
+            initial={{ x: -30, opacity: 0}}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.50 }}
+          >
+            <main className='container pt-24'>
               { children }
-          </main>
+            </main>
+          </motion.div>
+        </AnimatePresence>
         <Footer />
 
-        <button 
+        {/* <button 
         onClick={()=> toTop()}
         style={{ visibility: isShowBtnToTop ? 'visible' : 'hidden' }} 
         className={style['btn__top']}
         >
           <HiOutlineArrowNarrowUp />
-        </button>
+        </button> */}
     </div>
   )
 }

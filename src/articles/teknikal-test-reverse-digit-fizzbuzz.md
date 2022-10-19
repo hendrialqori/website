@@ -1,10 +1,10 @@
 ---
 id: 1
 title: 'Teknikal test: Reverse Digit dan Fizzbuzz'
-tags: ['Coding test', 'Javascript']
-created: '4 september 2022'
-read: '15 menit baca'
 highlight: 'Postingan kali in akan membahasan 2 topik yang sering keluar saat Teknikal test interview'
+tag: '#codingTest'
+created: 'Sep, 20 2022'
+timeRead: '5 minute read'
 slug: 'teknikal-test-reverse-digit-fizzbuzz'
 ---
 
@@ -19,43 +19,29 @@ Mereka akan di test kemampuannya untuk menyelesaikan beberapa soal dalam kurun w
 Reverse Digits atau membalikan suatu angka, Dalam kasus ini user meminta kita untuk membalikan suatu parameter yang di berikan entah itu dari parameter sebuah function atau dari command line/readline pada node js, Les't resolved  !!
 <br />
 
-#### Cara pertama
-
-```js
-//reverse.js
-
-const reverse = (params) => {
-
+```js:reverse.js
+  const reverse = (params) => {
   let container = []
 
   for(let i = params.length; i > 0; i -= 1) {
     container.push(params[i - 1])
   }
- 
- return container.join('')
-
+  return container.join('')
 }
 
 const r = reverse('tricky-blog')
 console.log(r)
-
 ```
-
+<br />
 output
-```bash 
+```bash:bash 
 golb-ykcirt 
 ```
 <br />
-
-##### Penjelasan
 Pada baris pertama, kita inisialisasi sebuah fungsi yang terdapat sebuah parameter yang terdapat variabel container, yang bermaksud untuk menyimpan hasil reverse looping nantinya. Melakukan looping selama panjang parameter dan di lakukan secara terbalik dan di tambahkan pada variabel container yang berupa **array**. Jika proses looping sudah selesai dan berhasil di simpan pada variabel container, Lakukan penggabungan dengan metode **.join**.
-
 <br />
 
-#### Cara kedua
-
-```js
-//reverse.js
+```js:reverse.js
 
 const reverse = (params) => {
 
@@ -69,7 +55,7 @@ console.log(r)
 ```
 
 output
-```bash 
+```bash:bash
 golb-ykcirt 
 ```
 <br />
@@ -84,8 +70,8 @@ Cara kedua ini cukup simpel, hanya dengan menggabungkan 3 method array. **.split
 Sederhana nya fizzbuzz sendiri adalah sebuah permainan angka atau menghitung yang mana, jika sebuah angka di bagi 3 hasil nya 0 maka print **Fizz** jika 5 print **Buzz** dan jika habis di bagi 3 dan 5 makan print **Fizzbuzz**. Biasa nya soal ini di kombinasikan dengan perulangan **For**, let's resolve !!
 <br/>
 
-```js  
-// fizzBuzz.js
+```js:fizzBuzz.js
+
 const fizzBuzz = (params) => {
   for(let i = 0; i < params ; i ++) {
     if(i % 3 === 0 && i % 5 === 0 ) console.log('Fizzbuzz')

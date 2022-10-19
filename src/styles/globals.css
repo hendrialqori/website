@@ -1,25 +1,83 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-	--dark1: rgb(26, 26, 26);
-	--dark2: rgb(37, 37, 37);
+	--dark-mode:#1b1d24;
+	--light-mode:#f7f7f7;
 }
 
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+@layer base {
+	p {
+		@apply text-black dark:text-gray-300 
+	}
+	strong {
+		@apply text-[17px] px-1 rounded-md bg-gray-200 text-black
+	}
+	h1,h2,h3,h4,h5 {
+		@apply text-black dark:text-white
+	}
+	ul {
+		@apply text-black dark:text-white
+	}
 }
 
-html,
-body
-{ background-color: var(--dark1); }
+@layer components {
+	.container {
+		@apply w-11/12 lg:w-7/12 mx-auto
+	}
+	.nav {
+		@apply pb-1
+	}
+	.active {
+		@apply text-sky-600
+	}
+}
 
-*,
-header,
-footer
-{ font-family: 'Open Sans', sans-serif; }
+*:not([arial-label=page-motion-animate-wrapper]) {
+	transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 
+html[data-mode=''] {
+	background-color: var(--light-mode);
+}
+
+html[data-mode='dark'] {
+	background-color: var(--dark-mode);
+}
+
+[aria-label='card-wrapper']:hover {
+	filter: drop-shadow(0 0 .3em rgb(27, 165, 219));
+	transition: .4s linear;
+}
+
+p {
+	font-size: 19px;
+}
+
+body {
+	background-color: #f7f7f7;
+}
+
+span {
+	cursor: pointer;
+}
+
+h1 {
+	font-size: 30px;
+}
+h2 {
+	font-size: 26px;
+}
+h3,
+h4,
+h5 
+{
+	font-size: 22px;
+}
+
+
+ul , li {
+	list-style-type: disc;
+	margin-left: 20px;
+}
