@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 
 const Portfolio: NextPage = () => {
   return (
-    <Layout title="tricky - portfolio">
+    <Layout title="tricky | Portfolio">
         <section className='mt-10'>
             <p>Sorry :( This page going under construction</p>
             <p>

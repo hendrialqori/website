@@ -26,7 +26,7 @@ const Slug: NextPage<SlugProps> = ({ data, content }) => {
             </section>
           </section>
           <p className='text-sky-600 dark:text-sky-400 text-lg font-semibold mb-2 mt-10'>{data.tag}</p>
-          <h1 className="text-[3.5rem] font-bold leading-[3.6rem] dark:text-white">{data.title}</h1>
+          <h1 className="text-[2.7rem] lg:text-[3.5rem] font-bold leading-[3rem] lg:leading-[3.6rem] dark:text-white">{data.title}</h1>
         </header>
         <MDXRemote {...content}/>
       </article>

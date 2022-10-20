@@ -10,7 +10,7 @@ const IndonesiaIcon = () => {
 
 const About:NextPage = () => {
   return (
-    <Layout title='about'>
+    <Layout title='tricky | Hbout'>
       <section>
         <section className='mb-10' aria-label='top-side'>
           <h1 className='my-5 text-sky-400 dark:text-sky-400 font-semibold text-xl'>#aboutMe</h1>
@@ -31,7 +31,7 @@ const About:NextPage = () => {
           </p>
         </section>
         <section aria-label='bottom-side'>
-          <h1 className='my-5 text-sky-400 font-semibold text-xl'>#betterTogether</h1>
+          <h1 className='my-5 text-sky-400 dark:text-sky-400 font-semibold text-xl'>#betterTogether</h1>
           <p className='text-[17px] text-gray-600 dark:text-gray-100'>If you want to make friendship or cooperation, please contact me on my social media accounts below.</p>
           <section className='flex gap-5 mt-3' aria-label='contact-wrapper'>
             <div className='grid gap-1'>

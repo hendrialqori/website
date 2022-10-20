@@ -9,7 +9,7 @@
 
 @layer base {
 	p {
-		@apply text-black dark:text-gray-300 
+		@apply text-black dark:text-gray-300 text-[17px] lg:text-[19px]
 	}
 	strong {
 		@apply text-[17px] px-1 rounded-md bg-gray-200 text-black
@@ -34,9 +34,9 @@
 	}
 }
 
-*:not([arial-label=page-motion-animate-wrapper]) {
-	transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
+*:not([aria-label=navigate-wrapper]){
+	transition: background-color .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+ }
 
 html[data-mode=''] {
 	background-color: var(--light-mode);
@@ -51,9 +51,6 @@ html[data-mode='dark'] {
 	transition: .4s linear;
 }
 
-p {
-	font-size: 19px;
-}
 
 body {
 	background-color: #f7f7f7;

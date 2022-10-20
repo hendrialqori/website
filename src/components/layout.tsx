@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Footer } from '../components/footer'
 
-
 interface LayoutProps {
     children: JSX.Element
     title: string
@@ -40,19 +39,15 @@ const Layout:NextPage<LayoutProps> = ({ children, title }) => {
 
   return (
     <div className='dark:bg-dark'>
-        {/* <ModalSeach /> */}
         <Head>
-            <title>{ title }</title>
-            <link rel="icon" href="/logo.svg" />
-            <meta name="description" content="Tricky is a blog that provides articles about web development specifically in the frontend realm" />
-            <meta property="og:title" content="tricky blogs" />
-            <meta property="og:url" content="https://blog-tricky.vercel.app/" />
-            <meta property="og:description" content="Tricky is a blog that provides articles about web development specifically in the frontend realm" />
-            <meta property="og:image" content="/logo.svg" />
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
-            <meta name="Description" content="Tricky is a blog that provides articles about web development specifically in the frontend realm"/>
-            <meta name="robots" content="all" />
-            <meta name="ROBOTS" content="index,follow" />
+          <title>{ title }</title>
+          <link rel="icon" href="/logo.svg" />
+          <meta name="description" content="Tricky is a blog that provides articles about web development specifically in the frontend realm" />
+          <meta property="og:title" content="tricky blogs" />
+          <meta property="og:url" content="https://blog-tricky.vercel.app/" />
+          <meta property="og:description" content="Tricky is a blog that provides articles about web development specifically in the frontend realm" />
+          <meta property="og:image" content="/logo.svg" />
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
         </Head>
 
         <Navigate />

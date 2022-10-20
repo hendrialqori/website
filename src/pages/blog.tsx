@@ -46,7 +46,7 @@ const Blog: NextPage<ArticlesProps> = ({ articles }) => {
     } ,[])
 
   return (
-    <Layout title='tricky - Blog'>
+    <Layout title='tricky | Blog'>
       <section>
         <InputSearch handleChange={handleChange} />
         <h1 className='my-5 text-sky-400 dark:text-sky-400 font-semibold text-xl'>#allPost</h1>
