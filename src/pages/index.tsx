@@ -11,7 +11,7 @@ import matter from 'gray-matter'
 const Home: NextPage<ArticlesProps> = ({ articles }) => {
   const Article = articles.slice(0, 2)
   return (
-    <Layout title='Tricky | Home'>
+    <Layout title='Home'>
       <Fragment>
         <section className='mt-10 lg:mt-20' aria-label='up-side'>
           <section className='text-black dark:text-gray-200'>

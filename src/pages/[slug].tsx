@@ -15,7 +15,7 @@ import rehypeCodeTitles from 'rehype-code-titles';
 
 const Slug: NextPage<SlugProps> = ({ data, content }) => {
   return (
-    <Layout title={"Tricky - " + data.slug}>
+    <Layout title={data.title}>
       <article>
         <header className="my-6">
           <section className="flex gap-3 items-center" aria-label='left-side'>

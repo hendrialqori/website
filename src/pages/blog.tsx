@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, memo, Suspense } from 'react'
+import React, { useState, useMemo, useCallback, memo,useRef } from 'react'
 import Layout from '../components/layout'
 import { IoIosSearch } from 'react-icons/io'
 import { ArticleCard } from '../components/articleCard'
@@ -46,13 +46,13 @@ const Blog: NextPage<ArticlesProps> = ({ articles }) => {
     } ,[])
 
   return (
-    <Layout title='tricky | Blog'>
+    <Layout title='Blog'>
       <section>
         <InputSearch handleChange={handleChange} />
         <h1 className='my-5 text-sky-400 dark:text-sky-400 font-semibold text-xl'>#allPost</h1>
         <section className='grid gap-3' aria-label='article-wrapper'>
           {Articles.length === 0 ? <span className='text-base text-black dark:text-white'>No article :(</span> : 
-          Articles.map((article, i) => (
+           Articles.map((article, i) => (
             <ArticleCard key={i} {...article} size='article' /> 
           ))} 
       </section>

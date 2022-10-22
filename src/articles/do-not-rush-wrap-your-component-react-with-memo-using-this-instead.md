@@ -1,11 +1,11 @@
 ---
 id: 1
-title: 'Do not rush wrap your component react with React.memo, using this instead!'
-highlight: 'While your have children component re-renders because has data change on parent component? using this way instead React.memo '
+title: 'Do not rush wrap your component react with memo, using this instead!'
+highlight: 'While your have children component re-renders because has data change on parent component? using this way instead memo '
 tag: '#reactJS'
-created: 'Oct, 10 2022'
-timeRead: '9 minute read'
-slug: 'do-not-rush-wrap-your-component-react-with-react-memo-using-this-instead'
+created: 'Oct, 20 2022'
+timeRead: '5 minute read'
+slug: 'do-not-rush-wrap-your-component-react-with-memo-using-this-instead'
 ---
 
 ```jsx:ChildrenComponent

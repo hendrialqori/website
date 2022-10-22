@@ -64,7 +64,7 @@ export const Navigate:React.FC = () => {
   return (
     <header 
       style={{ backdropFilter: "blur(15px)" }} 
-      className='fixed left-0 right-0 py-3 lg:py-5 border-b-[1px] dark:border-gray-700 z-[100]'
+      className='fixed left-0 right-0 py-1 lg:py-5 border-b-[1px] dark:border-gray-700 z-[100]'
       aria-label='navigate-wrapper'
       >
       <section className='container flex items-center justify-between'>
@@ -74,7 +74,9 @@ export const Navigate:React.FC = () => {
         <section className='flex items-center gap-3 lg:gap-5'>
           { mobileMode ? (
             <nav className='grid relative' aria-label='nav-small-mode'>
-              <button onClick={()=> setVisibleMobileNav(prev => !prev)} className='text-sky-400 shadow-lg rounded-full text-center dark:bg-gray-700 px-5 w-24 py-2 font-semibold first-letter:uppercase'>
+              <button onClick={()=> setVisibleMobileNav(prev => !prev)} 
+               className='text-sky-400 shadow-lg rounded-full text-center dark:bg-gray-700 lg:px-5 w-20 lg:w-24 py-1 lg:py-2 font-semibold first-letter:uppercase'
+               >
                 {router.pathname === '/[slug]' ? 'Blog' : activeTitle}
               </button>
               <AnimatePresence>

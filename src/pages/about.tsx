@@ -10,7 +10,7 @@ const IndonesiaIcon = () => {
 
 const About:NextPage = () => {
   return (
-    <Layout title='tricky | Hbout'>
+    <Layout title='About'>
       <section>
         <section className='mb-10' aria-label='top-side'>
           <h1 className='my-5 text-sky-400 dark:text-sky-400 font-semibold text-xl'>#aboutMe</h1>

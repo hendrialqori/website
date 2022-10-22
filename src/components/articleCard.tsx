@@ -16,8 +16,8 @@ export const ArticleCard =
             <p className='text-gray-500 dark:text-gray-400 text-xs'>{created}</p>
           </div>
           <div>
-            <h2 className='text-[1.1rem] font-semibold leading-5 mt-2 text-sky-600 dark:text-sky-400'>{title}</h2>
-            <p className='text-[1rem] leading-5 mt-2 dark:text-white'>memo commonly used for performance optimization for own react app, But had other way instead using memo.</p>
+            <h2 className='text-[1rem] lg:text-[1.1rem] font-semibold leading-5 mt-2 text-sky-600 dark:text-sky-400'>{title}</h2>
+            <p className='text-[14px] lg:text-[1rem] leading-5 mt-2 dark:text-gray-400'>{highlight}</p>
           </div>
           <div className='flex items-center justify-between mt-2'>
             <p className='text-sky-600 text-sm'>{tag}</p>

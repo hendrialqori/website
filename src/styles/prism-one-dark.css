@@ -71,6 +71,7 @@
      padding: 1em;
      overflow: auto;
      border-radius:  0 0 10px 10px;
+     margin-bottom: 15px;
  }
  
  /* Inline code */
@@ -89,13 +90,7 @@
  }
 
  .code-line {
-    font-size: 1.2rem;
- }
-
- @media (max-width:765px) {
-    .code-line {
-        font-size: 1rem;
-     }
+    font-size: 1.1rem;
  }
  
  .token.comment,
@@ -470,3 +465,24 @@
     width: 130px;
     background: rgb(4, 55, 70);
 }
+
+@media (max-width:765px) {
+    .code-line {
+        font-size: .9rem;
+     }
+
+    .rehype-code-title {
+        margin-top: 10px;
+        color:rgb(171, 171, 171);
+        font-size: .9rem;
+        font-weight: 400;
+        background: rgb(20, 24, 36);
+        padding: 8px 14px;
+        border-radius: 10px 10px 0 0;
+        position: relative;
+        overflow: hidden;
+    }
+     .rehype-code-title::before {
+        width: 100px;
+    }
+ }

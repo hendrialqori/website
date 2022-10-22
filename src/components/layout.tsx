@@ -57,7 +57,7 @@ const Layout:NextPage<LayoutProps> = ({ children, title }) => {
             key={router.route}
             initial={{ x: -30, opacity: 0}}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.50 }}
+            transition={{ duration: 0.20 }}
           >
             <main className='container pt-24'>
               { children }

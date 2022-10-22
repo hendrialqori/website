@@ -9,16 +9,22 @@
 
 @layer base {
 	p {
-		@apply text-black dark:text-gray-300 text-[17px] lg:text-[19px]
+		@apply text-black dark:text-gray-300 text-[16px] md:text-[17px] lg:text-[19px]
 	}
 	strong {
-		@apply text-[17px] px-1 rounded-md bg-gray-200 text-black
+		@apply text-[14px] lg:text-[17px] px-1 rounded-md bg-gray-200 text-black
 	}
 	h1,h2,h3,h4,h5 {
 		@apply text-black dark:text-white
 	}
 	ul {
 		@apply text-black dark:text-white
+	}
+	a {
+		@apply text-sky-400 underline
+	}
+	em {
+		@apply bg-black text-white rounded-md px-2 font-light 
 	}
 }
 
@@ -73,8 +79,20 @@ h5
 	font-size: 22px;
 }
 
-
 ul , li {
 	list-style-type: disc;
 	margin-left: 20px;
+}
+
+blockquote {
+	position: relative;
+	border-left: 10px solid rgb(26, 147, 195);
+	padding-left: 20px;
+	padding-block: 10px;
+	margin-block: 15px;
+}
+
+blockquote > * {
+	font-size: 17px !important;
+	font-weight: 600;
 }
