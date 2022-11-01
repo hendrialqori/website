@@ -7,11 +7,11 @@ import { Navigate as NavigateList } from '../utils/navigate'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const SunIcon = memo(function _(){
-  return <Image src='/sun.svg' width={23} height={23} alt='moon-icon'/>
+  return <Image src='/sun.svg' width={20} height={20} alt='moon-icon'/>
 })
 
 const MoonIcon = memo(function _(){
-  return <Image src='/moon.svg' width={19} height={19} alt='moon-icon'/>
+  return <Image src='/moon.svg' width={16} height={16} alt='moon-icon'/>
 })
 
 export const Navigate:React.FC = () => {
@@ -75,7 +75,7 @@ export const Navigate:React.FC = () => {
           { mobileMode ? (
             <nav className='grid relative' aria-label='nav-small-mode'>
               <button onClick={()=> setVisibleMobileNav(prev => !prev)} 
-               className='text-sky-400 shadow-lg rounded-full text-center dark:bg-gray-700 lg:px-5 w-20 lg:w-24 py-1 lg:py-2 font-semibold first-letter:uppercase'
+               className='text-sky-400 border-[1px] dark:border-slate-600 rounded-full text-center dark:bg-dark lg:px-5 w-20 lg:w-24 py-1 lg:py-2 font-semibold first-letter:uppercase'
                >
                 {router.pathname === '/[slug]' ? 'Blog' : activeTitle}
               </button>

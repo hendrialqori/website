@@ -8,7 +8,7 @@ timeRead: '5 minute read'
 slug: 'do-not-rush-wrap-your-component-react-with-memo-using-this-instead'
 ---
 
-```jsx:ChildrenComponent
+```jsx:JSX
 export const ChildrenComponent = () => {
 
   console.count('Children component Render!')
@@ -21,7 +21,7 @@ export const ChildrenComponent = () => {
 }
 ```
 
-```jsx:ParrentComponent.jsx
+```jsx:JSX
 import { useState } from 'react'
 import { ChildrenComponent } from './'
 
@@ -58,7 +58,7 @@ Imagine has a heavy process let's say calling API from server with many data and
 <br />
 The way to solve it is wrap **ChildrenComponent** with **memo**, example code below!  
 
-```jsx:ChildrenComponent
+```jsx:JSX
 import { memo } from 'react';
 
 export const ChildrenComponent = memo(function _() => {
@@ -76,7 +76,7 @@ export const ChildrenComponent = memo(function _() => {
 This way has enough for prevent re-renders problems, But i have own way to resolve this problem
 with **make separated component**.    
 
-```jsx:ParrentComponent.jsx
+```jsx:JSX
 import { useState } from 'react'
 import { ChildrenComponent } from './'
 

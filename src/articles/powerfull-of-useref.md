@@ -15,13 +15,13 @@ If on vanilla javascript, useRef like **document.querySelector()**
 <br />
 Its mean we can access property which exists, as example on **input tag** had *.value* or *.focus* property.
 
-```js:Vanilla-way
+```js:Vanilla
 const input = document.querySelector('.input')
 document.getElementById('root').innerHTML = input.value;
 ```
 <br/>
 
-```jsx:React-way
+```jsx:React
 import { useRef } from 'react';
 
 const InputComponent = () => {
@@ -40,7 +40,7 @@ const InputComponent = () => {
 In this case, we try'na refactory code below using *useRef* previously used *useState*. Les't code!
 <br/>
 
-```jsx:Input.jsx
+```jsx:JSX
 import { useState } from 'react';
 
 const InputComponent = () => {
@@ -77,7 +77,7 @@ const InputComponent = () => {
 ```
 At first glance nothing is wrong with this code all walking normally, but if you want make you own component do not re-render even thought value on state changes, useRef is choices.
 
-```jsx:Input.jsx
+```jsx:JSX
 import { useRef } from 'react';
 
 const InputComponent = () => {
