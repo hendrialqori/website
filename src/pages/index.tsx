@@ -16,7 +16,7 @@ const Home: NextPage<ArticlesProps> = ({ articles }) => {
         <section className='mt-10 lg:mt-20' aria-label='up-side'>
           <section className='text-black dark:text-gray-200'>
             <h1 className='text-2xl font-extrabold'>Hi there, <br /> I&apos;m Hendri Alqori</h1>
-            <h2 className='text-2xl font-extrabold'>Welcome to my personal blog, <span className='text-sky-500'>tricky!</span></h2>
+            <h2 className='text-2xl font-extrabold'>Welcome to my personal site, <span className='text-sky-500'>folks!</span></h2>
           </section>
         </section>
         <section className='mt-10' aria-label='down-side'>

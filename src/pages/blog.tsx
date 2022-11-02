@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, memo,useRef } from 'react'
+import React, { useState, useMemo, useCallback, memo } from 'react'
 import Layout from '../components/layout'
 import { IoIosSearch } from 'react-icons/io'
 import { ArticleCard } from '../components/articleCard'

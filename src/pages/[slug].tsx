@@ -1,5 +1,6 @@
 import Layout from '../components/layout'
 import Image from "next/image";
+import { BsCalendarDate, BsClock } from 'react-icons/bs';
 
 import type { SlugProps } from '../types';
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
@@ -21,8 +22,17 @@ const Slug: NextPage<SlugProps> = ({ data, content }) => {
           <section className="flex gap-3 items-center" aria-label='left-side'>
             <Image src="/avatar.png" width={50} height={50} alt="author-avatar" />
             <section>
-              <p className="font-semibold text-sm">Hendri Alqori</p>
-              <p className="text-sm text-gray-500">{data.timeRead} | {data.created}</p>
+              <h1 className="font-semibold text-sm mb-1">Hendri Alqori</h1>
+              <section className="flex items-center gap-4">
+                <span className="text-gray-500 flex items-center gap-2">
+                  <BsCalendarDate className='text-lg' />
+                  <p className="text-xs md:text-sm">{data.created}</p>
+                </span>
+                <span className="text-gray-500 flex items-center gap-2">
+                  <BsClock className="text-xs md:text-sm" />
+                  <p className="text-sm">{data.timeRead}</p>
+                </span>
+              </section>
             </section>
           </section>
           <p className='text-sky-600 dark:text-sky-400 text-lg font-semibold mb-2 mt-10'>{data.tag}</p>

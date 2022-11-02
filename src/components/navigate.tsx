@@ -64,13 +64,13 @@ export const Navigate:React.FC = () => {
   return (
     <header 
       style={{ backdropFilter: "blur(15px)" }} 
-      className='fixed left-0 right-0 py-1 lg:py-5 border-b-[1px] dark:border-gray-700 z-[100]'
+      className='fixed left-0 right-0 py-3 lg:py-5 border-b-[1px] dark:border-gray-700 z-[100]'
       aria-label='navigate-wrapper'
       >
-      <section className='container flex items-center justify-between'>
-        <button onClick={()=> router.push('/')}>
+      <section className='container flex items-center justify-end'>
+        {/* <button onClick={()=> router.push('/')}>
             <Image src='/logo.svg' alt='logo' width={40} height={40} />
-        </button>
+        </button> */}
         <section className='flex items-center gap-3 lg:gap-5'>
           { mobileMode ? (
             <nav className='grid relative' aria-label='nav-small-mode'>
