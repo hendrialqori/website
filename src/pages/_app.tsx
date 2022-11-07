@@ -1,7 +1,7 @@
 import Script from 'next/script'
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
-import { AppProvider } from '../context-manegement/store'
+import { AppProvider } from '../context/store'
 import { pageViewTracker } from '../libs/gtag'
 import '../styles/globals.css'
 import '../styles/prism-one-dark.css'

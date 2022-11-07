@@ -27,8 +27,6 @@ export const Navigate:React.FC = () => {
   const [mobileMode, setMobileMode] = useState<boolean>()
   const [isVisibleMobileNav, setVisibleMobileNav] = useState(false)
 
-
-
   const handleResize = ()=> {
     return typeof window !== 'undefined'
           && window.innerWidth < 768 ?
@@ -64,7 +62,7 @@ export const Navigate:React.FC = () => {
   return (
     <header 
       style={{ backdropFilter: "blur(15px)" }} 
-      className='fixed left-0 right-0 py-3 lg:py-5 border-b-[1px] dark:border-gray-700 z-[100]'
+      className='fixed left-0 right-0 py-5 lg:py-5 border-b-[1px] dark:border-gray-700 z-[9]'
       aria-label='navigate-wrapper'
       >
       <section className='container flex items-center justify-end'>
@@ -97,7 +95,7 @@ export const Navigate:React.FC = () => {
               </AnimatePresence>
             </nav> )
             :
-            ( <nav className='flex items-center gap-6 text-lg font-semibold' aria-label='nav-large-mode'>
+            ( <nav className='flex items-center gap-6 text-[17px] font-semibold' aria-label='nav-large-mode'>
                 <CustomLink href='/'>Home</CustomLink>
                 <CustomLink activeSlug={router.pathname === '/[slug]'} href='/blog'>Blog</CustomLink>
                 <CustomLink href='/about'>About</CustomLink>
@@ -107,7 +105,7 @@ export const Navigate:React.FC = () => {
           <section>
             {
               isDark ? 
-              <button onClick={() => setDark(prev => !prev)} className='flex items-center justify-center ml-1 py-[1px]'>
+              <button onClick={() => setDark(prev => !prev)} className='flex items-center justify-center ml-1 py-[8px]'>
                 <MoonIcon />
               </button>
               :

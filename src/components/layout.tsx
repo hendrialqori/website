@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Navigate } from './navigate'
+import { Navigate } from './navigation'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -41,13 +41,6 @@ const Layout:NextPage<LayoutProps> = ({ children, title }) => {
     <div className='dark:bg-dark'>
         <Head>
           <title>{ title }</title>
-          <link rel="icon" href="/logo.svg" />
-          <meta name="description" content="Tricky is a blog that provides articles about web development specifically in the frontend realm" />
-          <meta property="og:title" content="tricky blogs" />
-          <meta property="og:url" content="https://blog-tricky.vercel.app/" />
-          <meta property="og:description" content="Tricky is a blog that provides articles about web development specifically in the frontend realm" />
-          <meta property="og:image" content="/logo.svg" />
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
         </Head>
 
         <Navigate />

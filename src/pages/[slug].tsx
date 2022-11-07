@@ -20,7 +20,7 @@ const Slug: NextPage<SlugProps> = ({ data, content }) => {
       <article>
         <header className="my-6">
           <section className="flex gap-3 items-center" aria-label='left-side'>
-            <Image src="/avatar.png" width={50} height={50} alt="author-avatar" />
+            <Image src="/avatar.png" width={40} height={40} alt="author-avatar" />
             <section>
               <h1 className="font-semibold text-sm mb-1">Hendri Alqori</h1>
               <section className="flex items-center gap-4">
@@ -29,14 +29,14 @@ const Slug: NextPage<SlugProps> = ({ data, content }) => {
                   <p className="text-xs md:text-sm">{data.created}</p>
                 </span>
                 <span className="text-gray-500 flex items-center gap-2">
-                  <BsClock className="text-xs md:text-sm" />
-                  <p className="text-sm">{data.timeRead}</p>
+                  <BsClock className="text-lg" />
+                  <p className="text-xs md:text-sm">{data.timeRead}</p>
                 </span>
               </section>
             </section>
           </section>
           <p className='text-sky-600 dark:text-sky-400 text-lg font-semibold mb-2 mt-10'>{data.tag}</p>
-          <h1 className="text-[1.8rem] lg:text-[3rem] font-bold leading-[2.2rem] lg:leading-[3.6rem] dark:text-white">{data.title}</h1>
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">{data.title}</h1>
         </header>
         <MDXRemote {...content}/>
       </article>

@@ -1,11 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
-interface LinkProps {
-    activeSlug?: boolean
-    children: string
-    href: string
-}
+import type { LinkProps } from '../types'
 
 export const CustomLink = ({ activeSlug = false ,children ,href }: LinkProps): JSX.Element => {
     const { pathname } = useRouter()

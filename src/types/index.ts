@@ -1,3 +1,4 @@
+// Home page
 interface article {
     title: string;
     highlight: string;
@@ -16,11 +17,30 @@ export interface InputSearchProps {
 }
 
 export interface ArticleCardProps extends article {
-    size: 'card' | 'article'
+    size: 'small' | 'medium' | 'large'
   }
 
-
+// Slug page
 export interface SlugProps {
     data: article;
     content: any
+}
+
+// Portfolio page
+export interface ProjectTypes {
+    id: number;
+    avatar: string;
+    title: string;
+    stack: string[];
+    desc: string;
+    link: {
+        github: string;
+        demo: string;
+    }
+}
+
+export interface LinkProps {
+    activeSlug?: boolean
+    children: string
+    href: string
 }

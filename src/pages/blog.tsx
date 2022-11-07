@@ -14,13 +14,13 @@ import matter from 'gray-matter'
 const InputSearch = memo(function _({ handleChange }: InputSearchProps): JSX.Element {
   return (
     <section className='relative w-full lg:w-max mx-auto mt-7'>
-      <IoIosSearch className='absolute right-4 top-2 text-gray-400 text-2xl' />
+      <IoIosSearch className='absolute right-4 top-2 text-gray-400 text-3xl' />
       <input
         type="text"
         name="value"
         onChange={handleChange}
-        className="bg-white dark:bg-gray-200 w-full lg:w-[500px] rounded-full border-[1px] border-gray-200 outline-sky-400 py-2 px-3 placeholder:dark:text-gray-700"
-        placeholder='what are you looking for ?'
+        className="bg-white text-lg dark:bg-gray-200 w-full lg:w-[500px] rounded-full border-[1px] border-gray-200 outline-sky-400 py-2 px-3 placeholder:dark:text-gray-700"
+        placeholder='Search article ..'
           />
     </section>
   )
@@ -53,7 +53,7 @@ const Blog: NextPage<ArticlesProps> = ({ articles }) => {
         <section className='grid gap-3' aria-label='article-wrapper'>
           {Articles.length === 0 ? <span className='text-base text-black dark:text-white'>No article :(</span> : 
            Articles.map((article, i) => (
-            <ArticleCard key={i} {...article} size='article' /> 
+            <ArticleCard key={i} {...article} size='large' /> 
           ))} 
       </section>
       </section>

@@ -8,12 +8,12 @@ timeRead: '5 minute read'
 slug: 'powerfull-of-useref'
 ---
 
-> *useRef* returns a mutable ref object whose *.current* property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component. [[reactjs docs]](https://reactjs.org/docs/hooks-reference.html#useref)  
+> ```useRef``` returns a mutable ref object whose *.current* property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component. [[reactjs docs]](https://reactjs.org/docs/hooks-reference.html#useref)  
 
 Essentially, useRef is like a *“box”* that can hold a mutable value in its **.current** property.
 If on vanilla javascript, useRef like **document.querySelector()**
 <br />
-Its mean we can access property which exists, as example on **input tag** had *.value* or *.focus* property.
+Its mean we can access property which exists, as example on input tag had *.value* or *.focus* property.
 
 ```js:Vanilla
 const input = document.querySelector('.input')
