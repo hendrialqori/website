@@ -6,9 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        light: "#f7f7f7",
-        dark: "#1b1d24"
+        'light': '#fafafa',
+        'dark': '#18191a',
+        'green': '#539E43'
+      },
+      fontFamily: {
+        'inter': 'Inter, sans-serif'
       }
+      
     },
   },
   plugins: [],

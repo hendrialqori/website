@@ -2,8 +2,8 @@ import type { NextPage } from 'next'
 import Layout from '../components/layout'
 import { useStore } from '../context/store'
 import { ActionTypes } from '../context/actionType'
-import { ModalProject } from '../components/modalProject'
-import { WrapperComponent } from '../components/wrapperIcon'
+import { ModalProject } from '../components/modal-project'
+import { Icon } from '../components/icon-wrapper'
 import { Projects } from '../utils/projects'
 
 const Portfolio: NextPage = () => {
@@ -14,31 +14,37 @@ const Portfolio: NextPage = () => {
   }
 
   const truncateChars = (text: string): string => {
-    return text.slice(0, 120) + '..'
+    return text.slice(0, 90) + '..'
   }
   return (
       <>
         <ModalProject />
         <Layout title="Portfolio">
-          <section>
-            <h1 className='my-5 text-sky-400 dark:text-sky-400 font-semibold text-xl '>#Portfolio</h1>
-            <section className='mt-10 flex flex-wrap gap-3 items-center justify-center'>
+        <section>
+            <header>
+              <h1 className='text-3xl font-bold'>Portfolio</h1>
+              <p className='text-black dark:text-light/70'>I like to write articles, share a little knowledge about web development, Enjoy it fellas!</p>
+            </header>
+            <section className='mt-10 flex flex-wrap gap-10 items-center justify-center'>
               {Projects.map((P) => (
-                <article 
+                <figure 
                   key={P.id} 
-                  className='w-[340px] h-[210px] lg:w-[383px] lg:h-[190px] border-[2px] border-gray-200 dark:border-sky-500 rounded-md p-4 flex flex-col justify-between'
-                  onClick={()=> handleShowProject(P)} role={"button"} tabIndex={0}
                   >
-                  <h1 className='font-bold mb-2 text-[20px]'>{P.title}</h1>
-                  <p className='text-[16px] md:text-[16px] leading-6 dark:text-gray-300'>
+                  <header className='flex items-center gap-3'>
+                    <h1 className='font-extrabold mb-1 text-xl'>{P.title}</h1>
+                    <button onClick={()=> handleShowProject(P)} className='border-[1px] rounded-md text-xs px-3 py-1'>
+                      Review
+                    </button>
+                  </header>
+                  <p className='text-black dark:text-light/70 font-light text-sm md:text-base'>
                     {truncateChars(P.desc)}
                   </p>
                   <figcaption className='mt-4 flex items-center gap-3'>
                     {P.stack.map((path, i) => (
-                      <WrapperComponent key={i} path={path} />
+                      <Icon key={i} path={path} />
                     ))}
                   </figcaption>
-                </article>
+                </figure>
               ))} 
             </section>
           </section>

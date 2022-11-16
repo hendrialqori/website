@@ -13,6 +13,7 @@ export interface ArticlesProps  {
 }
 
 export interface InputSearchProps {
+    value: string;
     handleChange: (e:React.ChangeEvent<HTMLInputElement>) => void
 }
 

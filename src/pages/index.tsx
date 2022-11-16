@@ -1,5 +1,6 @@
-import { Fragment, useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import type { NextPage, GetStaticProps } from 'next'
+import Image from 'next/image'
 import Layout from '../components/layout'
 import type { ArticlesProps } from '../types'
 import Link from 'next/link'
@@ -8,60 +9,71 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
+const ByeIcon = () => {
+  return <Image src='/bye.svg' className='text-yellow-400 ' alt='icon' width={50} height={50}/>
+}
+
 const Home: NextPage<ArticlesProps> = ({ articles }) => {
-  const Article = articles.slice(0, 2)
-  const [size, setSize] = useState<'medium' | 'large'>('medium')
-
-  const onResizeScreen = useCallback(() => {
-    typeof window !== 'undefined'
-    && window.innerWidth <= 768 ?
-    setSize('large') : setSize('medium')
-  }, [])
-
-  useEffect(()=> {
-    window.addEventListener('resize', onResizeScreen)
-
-    return () => {
-      window.removeEventListener('resize', onResizeScreen)
-    }
-  }, [onResizeScreen])
-
+  const Articles = 
+    articles.sort((a, b) => a.created.localeCompare(b.created)).slice(0, 2)
 
   return (
     <Layout title='Home'>
-      <Fragment>
-        <header className='mt-10 lg:mt-20' aria-label='up-side'>
-          {/* <Image src='/vector.png' className='rounded-full object-cover' width={80} height={80} alt='avatar' /> */}
-          <section className='text-black dark:text-gray-200'>
-            <h1 className='text-2xl font-bold'>Hi there, <br /> I&apos;m Hendri Alqori</h1>
-            <h2 className='text-2xl font-bold'>Welcome to my personal site, <span className='text-sky-500'>folks!</span></h2>
-          </section>
+      <>
+        <header className='mt-1 md:mt-10' aria-label='up-side'>
+          <ByeIcon />
+          <h1 className='text-[2.1rem] font-extrabold'>Hendri Alqori</h1>
+          <p>A guy from Landak, Indonesia</p>
+          <p>Creative, Fast Leaner and love writte article</p>
         </header>
-        <section className='mt-10' aria-label='down-side'>
-          <h3 className='text-xl font-semibold my-5 text-sky-400 dark:text-sky-400'>
-            #recentPost
+
+        <section className='mt-16' aria-label='recent-post-container'>
+          <h3 className='text-2xl font-bold my-5'>
+            Recent Post
           </h3>
           <section className='flex flex-wrap gap-3'>
-            {Article.map((article, i) => (
+            {Articles.map((article, i) => (
               <Link key={article.slug} href={'/' + article.slug }>
                 <article
-                  className='flex gap-5 w-[100%] md:w-[48%] bg-light dark:bg-dark border-[1px] dark:border-slate-800 rounded-2xl p-6 cursor-pointer' aria-label='card-wrapper'>
-                  <section className='w-full' aria-label='right-side'>
-                    <div className='flex gap-5 items-center mb-2'>
-                      <p className='text-gray-700 dark:text-gray-400 text-xs md:text-sm'>{article.created}</p>
-                      <p className='text-sky-600 text-xs md:text-sm'>{article.tag}</p>
+                  className='flex gap-5 w-[100%] md:w-[48%] rounded-2xl bg-gray-100 dark:bg-light/5 p-6' 
+                  aria-label='card-wrapper'
+                  role={'button'}
+                  tabIndex={0}
+                  >
+                  <section className='w-full' aria-label='card-content'>
+                    <div className='flex items-center text-xs gap-4 mb-4'>
+                      <p>{article.created}</p>
+                      <p>{article.tag}</p>
                     </div>
-                    <div>
-                      <h2 className='text-[1rem] lg:text-[1.1rem] font-semibold leading-6 mt-2 text-sky-600 dark:text-sky-400'>{article.title}</h2>
-                      <p className='text-[14px] lg:text-[1rem] leading-5 mt-2 text-gray-700 dark:text-gray-300'>{article.highlight}</p>
-                    </div>
-                  </section>
+                    <h2 className='font-extrabold text-xl'>{article.title}</h2>
+                </section>
                 </article>
               </Link>
             ))}
           </section>
         </section>
-      </Fragment>
+        
+        <section className='mt-16' aria-label='recent-code-snippets-container'>
+          <h3 className='text-2xl font-bold my-5'>
+           Code Snippets
+          </h3>
+          <section className='flex flex-wrap gap-3'>
+            {Articles.map((article, i) => (
+              <Link key={article.slug} href={'/' + article.slug }>
+                <article
+                  className='w-[100%] md:w-[48%] rounded-2xl bg-gray-100 dark:bg-light/5 p-6' 
+                  aria-label='card-content'
+                  role={'button'}
+                  tabIndex={0}
+                  >
+                  <p className='mb-4 font-bold text-sm'>React js</p>
+                  <h2 className='font-extrabold text-xl'>Sticky scroll</h2>
+                </article>
+              </Link>
+            ))}
+          </section>
+        </section>
+      </>
     </Layout>
   )
 }

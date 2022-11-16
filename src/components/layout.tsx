@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Navigate } from './navigation'
+import { Navigate } from './header'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Footer } from '../components/footer'
+import { HiOutlineArrowNarrowUp } from 'react-icons/hi'
 
 interface LayoutProps {
     children: JSX.Element
@@ -52,7 +53,7 @@ const Layout:NextPage<LayoutProps> = ({ children, title }) => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.20 }}
           >
-            <main className='container pt-24'>
+            <main className='container pt-24 font-inter dark:text-light'>
               { children }
             </main>
           </motion.div>
@@ -62,7 +63,6 @@ const Layout:NextPage<LayoutProps> = ({ children, title }) => {
         {/* <button 
         onClick={()=> toTop()}
         style={{ visibility: isShowBtnToTop ? 'visible' : 'hidden' }} 
-        className={style['btn__top']}
         >
           <HiOutlineArrowNarrowUp />
         </button> */}

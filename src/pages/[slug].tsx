@@ -1,6 +1,8 @@
 import Layout from '../components/layout'
 import Image from "next/image";
-import { BsCalendarDate, BsClock } from 'react-icons/bs';
+import Link from 'next/link'
+import { FaLinkedin } from 'react-icons/fa'
+import { AiFillGithub } from 'react-icons/ai'
 
 import type { SlugProps } from '../types';
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
@@ -17,28 +19,27 @@ import rehypeCodeTitles from 'rehype-code-titles';
 const Slug: NextPage<SlugProps> = ({ data, content }) => {
   return (
     <Layout title={data.title}>
-      <article>
-        <header className="my-6">
-          <section className="flex gap-3 items-center" aria-label='left-side'>
-            <Image src="/avatar.png" width={40} height={40} alt="author-avatar" />
-            <section>
-              <h1 className="font-semibold text-sm mb-1">Hendri Alqori</h1>
-              <section className="flex items-center gap-4">
-                <span className="text-gray-500 flex items-center gap-2">
-                  <BsCalendarDate className='text-lg' />
-                  <p className="text-xs md:text-sm">{data.created}</p>
-                </span>
-                <span className="text-gray-500 flex items-center gap-2">
-                  <BsClock className="text-lg" />
-                  <p className="text-xs md:text-sm">{data.timeRead}</p>
-                </span>
-              </section>
-            </section>
-          </section>
-          <p className='text-sky-600 dark:text-sky-400 text-lg font-semibold mb-2 mt-10'>{data.tag}</p>
-          <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">{data.title}</h1>
-        </header>
-        <MDXRemote {...content}/>
+      <article className='mt-1 md:mt-10'>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl text-center">{data.title}</h1>
+        <section className='w-max mx-auto flex flex-col items-center gap-1 my-8' aria-label='author'>
+          <Image src="/avatar.png" width={40} height={40} alt="author-avatar" />
+          <h2 className="font-semibold dark:font-light text-sm">Hendri Alqori</h2>
+          <div className='flex items-center gap-3 text-xs'>
+            <p>{data.created}</p>
+            <p>{data.timeRead}</p>
+          </div>
+          <div className='flex items-center gap-3 mt-8' aria-label='social-media-anchor'>
+            <Link href={'https://www.linkedin.com/in/hendri-alqori-b87a52171/'}>
+                <a><FaLinkedin className='text-2xl' /></a>
+            </Link>
+            <Link href={'https://github.com/hendrialqori'}>
+                <a><AiFillGithub className='text-2xl' /></a>
+            </Link>
+          </div>
+        </section>
+        <section className='mdx-wrapper dynamic-font'>
+          <MDXRemote {...content}/>
+        </section>
       </article>
     </Layout>
   )

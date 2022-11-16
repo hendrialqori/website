@@ -445,10 +445,9 @@
 
  .rehype-code-title {
     margin-top: 10px;
-	color:rgb(171, 171, 171);
-	font-size: 1.1rem;
-    font-weight: 600;
-	background: rgb(20, 24, 36);
+	color: var(--light-mode);
+	font-size: 1rem;
+	background: rgb(26, 147, 195);
     padding: 8px 14px;
     border-radius: 10px 10px 0 0;
     position: relative;
@@ -462,13 +461,13 @@
     right: 0;
     position: absolute;
     height: 64px;
-    width: 85%;
-    background: rgb(32, 38, 48);
+    width: 81%;
+    background: var(--dark-mode);
 }
 
 @media (max-width:765px) {
     .code-line {
-        font-size: .75rem;
+        font-size: .81rem;
      }
 
     .rehype-code-title {

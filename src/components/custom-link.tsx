@@ -6,12 +6,14 @@ export const CustomLink = ({ activeSlug = false ,children ,href }: LinkProps): J
     const { pathname } = useRouter()
     return (
         <Link href={href}>
-            <span 
-            style={{ color: activeSlug ? 'rgb(2 132 199)' : '' }} 
-            className={ pathname === href ? 'active' : 'text-black dark:text-white'}
-            >
-            {children}
-            </span>
+            <a 
+                className={ pathname === href || activeSlug ?
+                    'text-dark dark:text-light font-semibold alink'
+                    : 'text-gray-400 alink'
+                    }
+                >
+                {children}
+            </a>
         </Link>
     )
 }

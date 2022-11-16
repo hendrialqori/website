@@ -1,14 +1,24 @@
 import Link from 'next/link'
 import { AiTwotoneHeart } from 'react-icons/ai'
-import { CgCoffee } from 'react-icons/cg'
+import { FaCoffee } from 'react-icons/fa'
+import { GoPerson } from 'react-icons/go'
 
 export const Footer:React.FC = () => {
   return (
     <footer>
-      <section className='container mt-[150px] py-5 border-t-[1px] dark:border-gray-700 flex justify-between'>
-        <p className='dark:text-white text-[16px] flex items-center gap-1 font-light'>
-          Build with <AiTwotoneHeart className='text-rose-600' /> & <CgCoffee className='text-orange-500' />
-        </p>
+      <section className='container mt-[100px] mb-[50px] py-5 flex flex-col items-center justify-center'>
+        <h3 className='text-dark dark:text-light font-semibold tracking-wider'>Created by</h3>
+        <div className='flex items-center gap-3 mt-2'>
+        <GoPerson 
+            className='text-[1.5rem] text-gray-400 hover:text-sky-300'
+          />
+          <AiTwotoneHeart
+            className='text-[1.6rem] text-gray-400 hover:text-red-500'
+          />
+          <FaCoffee 
+            className='text-[1.6rem] text-gray-400 hover:text-orange-500/50'
+          />
+        </div>
       </section>
     </footer>
   )

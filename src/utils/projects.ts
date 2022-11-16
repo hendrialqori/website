@@ -1,11 +1,11 @@
-import type { ProjectTypes } from '../types/index'
+import type { ProjectTypes  } from '../types/index'
 
 let Projects: ProjectTypes[];
 Projects = [
     {
         id: Date.now() * Math.random(),
         avatar: '/project/portfolio.png',
-        title: 'Portfolio',
+        title: 'Personal portfolio',
         stack: [
             '/icons/next.svg',
             '/icons/ts.svg',
