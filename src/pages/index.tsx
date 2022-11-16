@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useState } from 'react'
 import type { NextPage, GetStaticProps } from 'next'
 import Image from 'next/image'
 import Layout from '../components/layout'
@@ -15,7 +14,7 @@ const ByeIcon = () => {
 
 const Home: NextPage<ArticlesProps> = ({ articles }) => {
   const Articles = 
-    articles.sort((a, b) => a.created.localeCompare(b.created)).slice(0, 2)
+    articles.sort((a, b) => b.created.localeCompare(a.created)).slice(0, 2)
 
   return (
     <Layout title='Home'>
@@ -53,7 +52,7 @@ const Home: NextPage<ArticlesProps> = ({ articles }) => {
           </section>
         </section>
         
-        <section className='mt-16' aria-label='recent-code-snippets-container'>
+        {/* <section className='mt-16' aria-label='recent-code-snippets-container'>
           <h3 className='text-2xl font-bold my-5'>
            Code Snippets
           </h3>
@@ -72,7 +71,7 @@ const Home: NextPage<ArticlesProps> = ({ articles }) => {
               </Link>
             ))}
           </section>
-        </section>
+        </section> */}
       </>
     </Layout>
   )
