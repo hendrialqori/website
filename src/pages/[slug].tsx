@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from 'next/link'
 import { FaLinkedin } from 'react-icons/fa'
 import { AiFillGithub } from 'react-icons/ai'
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 
 import type { SlugProps } from '../types';
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
@@ -19,28 +20,65 @@ import rehypeCodeTitles from 'rehype-code-titles';
 const Slug: NextPage<SlugProps> = ({ data, content }) => {
   return (
     <Layout title={data.title}>
-      <article className='mt-1 md:mt-10'>
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl text-center">{data.title}</h1>
-        <section className='w-max mx-auto flex flex-col items-center gap-1 my-8' aria-label='author'>
-          <Image src="/avatar.png" width={40} height={40} alt="author-avatar" />
-          <h2 className="font-semibold dark:font-light text-sm">Hendri Alqori</h2>
-          <div className='flex items-center gap-3 text-xs'>
-            <p>{data.created}</p>
-            <p>{data.timeRead}</p>
-          </div>
-          <div className='flex items-center gap-3 mt-8' aria-label='social-media-anchor'>
-            <Link href={'https://www.linkedin.com/in/hendri-alqori-b87a52171/'}>
-                <a><FaLinkedin className='text-2xl' /></a>
-            </Link>
-            <Link href={'https://github.com/hendrialqori'}>
-                <a><AiFillGithub className='text-2xl' /></a>
-            </Link>
-          </div>
-        </section>
-        <section className='mdx-wrapper dynamic-font'>
-          <MDXRemote {...content}/>
-        </section>
-      </article>
+      <>
+        <NextSeo 
+            title={data.title}
+            description={data.highlight}
+            openGraph={{
+            type: 'website',
+            title: data.title,
+            description: data.highlight,
+            url: `https://hendrialqori.vercel.app/${data.slug}`,
+            siteName: 'Hendri Alqori',
+            images : [ 
+                {
+                url: 'https://ik.imagekit.io/ils26chuk/og-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1668654017675',
+                width: 1200,
+                height: 630,
+                },
+            ]
+            }}
+          />
+          <ArticleJsonLd
+            title={data.title}
+            url={`https://hendrialqori.vercel.app/${data.slug}`}
+            images={[
+              'https://ik.imagekit.io/ils26chuk/og-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1668654017675',
+            ]}
+            datePublished={data.created}
+            authorName={[
+              {
+                name: 'Hendri Alqori',
+                url: 'https://hendrialqori.vercel.app',
+              }
+            ]}
+            publisherName="Hendri Alqori"
+            description={data.title}
+            isAccessibleForFree={true}
+          />
+        <article className='mt-1 md:mt-10'>
+          <h1 className="text-3xl font-bold tracking-tight md:text-4xl text-center">{data.title}</h1>
+          <section className='w-max mx-auto flex flex-col items-center gap-1 my-8' aria-label='author'>
+            <Image src="/avatar.png" width={40} height={40} alt="author-avatar" />
+            <h2 className="font-semibold dark:font-light text-sm">Hendri Alqori</h2>
+            <div className='flex items-center gap-3 text-xs'>
+              <p>{data.created}</p>
+              <p>{data.timeRead}</p>
+            </div>
+            <div className='flex items-center gap-3 mt-8' aria-label='social-media-anchor'>
+              <Link href={'https://www.linkedin.com/in/hendri-alqori-b87a52171/'}>
+                  <a><FaLinkedin className='text-2xl' /></a>
+              </Link>
+              <Link href={'https://github.com/hendrialqori'}>
+                  <a><AiFillGithub className='text-2xl' /></a>
+              </Link>
+            </div>
+          </section>
+          <section className='mdx-wrapper dynamic-font'>
+            <MDXRemote {...content}/>
+          </section>
+        </article>
+      </>
     </Layout>
   )
 }

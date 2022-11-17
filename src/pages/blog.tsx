@@ -2,6 +2,7 @@ import React, { useState, useMemo, useCallback, memo } from 'react'
 import Layout from '../components/layout'
 import { IoIosSearch } from 'react-icons/io'
 import Link from 'next/link'
+import { NextSeo } from 'next-seo'
 
 import type { NextPage, GetStaticProps } from 'next'
 import type { ArticlesProps, InputSearchProps } from '../types'
@@ -42,10 +43,28 @@ const Blog: NextPage<ArticlesProps> = ({ articles }) => {
 
   return (
     <Layout title='Blog'>
-      <section>
-        <header>
+      <>
+        <NextSeo 
+            title='Blog -- Hendri Alqori'
+            description='I write blog, Share a bit of my knowladge about web developement relative topics'
+            openGraph={{
+              type: 'website',
+              title: 'Blog -- Hendri Alqori',
+              description: 'I write blog, Share a bit of my knowladge about web developement relative topics',
+              url: 'https://hendrialqori.vercel.app/blog',
+              siteName: 'Hendri Alqori',
+              images : [ 
+                {
+                  url: 'https://ik.imagekit.io/ils26chuk/og-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1668654017675',
+                  width: 1200,
+                  height: 630,
+                },
+              ]
+            }}
+          />
+        <header className='mt-5'>
           <h1 className='text-3xl font-bold'>Blog</h1>
-          <p className='text-black dark:text-light/70'>I like to write articles, share a little knowledge about web development, Enjoy it fellas!</p>
+          <p className='text-black dark:text-light/70'>I write blog, Share a bit of my knowladge about web developement relative topics, Enjoy it fellas!</p>
         </header>
         <InputSearch value={search} handleChange={handleChange} />
         <section className='grid gap-10 mt-12' aria-label='article-wrapper'>
@@ -67,7 +86,7 @@ const Blog: NextPage<ArticlesProps> = ({ articles }) => {
               </Link>
           ))} 
       </section>
-      </section>
+      </>
     </Layout>
   )
 }

@@ -5,6 +5,7 @@ import { SiGmail } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 import { AiFillGithub } from 'react-icons/ai'
 import { SiInstagram } from 'react-icons/si'
+import { NextSeo } from 'next-seo'
 
 import type { NextPage } from 'next'
 
@@ -17,7 +18,25 @@ const About:NextPage = () => {
   return (
     <Layout title='About'>
       <>
-        <section className='dynamic-font md:leading-[1.75rem]' aria-label='top-side'>
+      <NextSeo 
+            title='About -- Hendri Alqori'
+            description='About myself, the skills I have and my career path'
+            openGraph={{
+              type: 'website',
+              title: 'About -- Hendri Alqori',
+              description: 'About myself, the skills I have and my career path',
+              url: 'https://hendrialqori.vercel.app/about',
+              siteName: 'Hendri Alqori',
+              images : [ 
+                {
+                  url: 'https://ik.imagekit.io/ils26chuk/og-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1668654017675',
+                  width: 1200,
+                  height: 630,
+                },
+              ]
+            }}
+          />
+        <section className='dynamic-font md:leading-[1.75rem] mt-5' aria-label='top-side'>
           <h1 className='text-3xl font-bold'>About</h1>
           <p className='mb-5'>
             Hey everyone! My name is <span className='font-semibold'>Hendri Alqori</span> and i am from <a className='text-sky-600 dark:text-sky-400 underline' href="https://id.wikipedia.org/wiki/Kabupaten_Landak" target='_blank' rel="noreferrer">Landak, West Borneo</a><sup><IndonesiaIcon /></sup>

@@ -21,11 +21,11 @@ const Home: NextPage<ArticlesProps> = ({ articles }) => {
     <Layout title='Home'>
       <>
       <NextSeo 
-            title='Hendri Alori'
-            description='About Blog, Project showcase and code snippets'
+            title='Hendri Alqori'
+            description='Blog, Project showcase and code snippets'
             openGraph={{
               type: 'website',
-              title: 'Home -- Hendri Alqori',
+              title: 'Hendri Alqori - Developer',
               description: 'About Blog, Project showcase and code snippets',
               url: 'https://hendrialqori.vercel.app',
               siteName: 'Hendri Alqori',
@@ -33,8 +33,7 @@ const Home: NextPage<ArticlesProps> = ({ articles }) => {
                 {
                   url: 'https://ik.imagekit.io/ils26chuk/og-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1668654017675',
                   width: 1200,
-                  height: 600,
-                  alt: 'Og Image Alt',
+                  height: 630,
                 },
               ]
             }}
