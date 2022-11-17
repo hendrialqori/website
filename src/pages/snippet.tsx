@@ -5,7 +5,7 @@ const Snippets:NextPage = () => {
     return (
         <Layout title='Snippets'>
             <section className='w-max mx-auto mt-20'>
-                <h1 className='font-bold text-xl'>Unfortunately :(, this page under construction</h1>
+                <h1 className='font-bold text-xs md:text-xl'>Unfortunately :(, this page under construction</h1>
             </section>
         </Layout>
     )

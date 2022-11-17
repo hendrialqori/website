@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Footer } from '../components/footer'
 import { HiOutlineArrowNarrowUp } from 'react-icons/hi'
+import { NextSeo } from 'next-seo'
 
 interface LayoutProps {
     children: JSX.Element
@@ -40,10 +41,25 @@ const Layout:NextPage<LayoutProps> = ({ children, title }) => {
 
   return (
     <div className='dark:bg-dark'>
-        <Head>
-          <title>{ title }</title>
-        </Head>
-
+        <NextSeo 
+            title='Hendri Alori'
+            description='About Blog, Project showcase and code snippets'
+            openGraph={{
+              type: 'website',
+              title: 'Home -- Hendri Alqori',
+              description: 'About Blog, Project showcase and code snippets',
+              url: 'https://hendrialqori.vercel.app',
+              siteName: 'Hendri Alqori',
+              images : [ 
+                {
+                  url: 'https://ik.imagekit.io/ils26chuk/og-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1668654017675',
+                  width: 1200,
+                  height: 600,
+                  alt: 'Og Image Alt',
+                },
+              ]
+            }}
+          />
         <Navigate />
         <AnimatePresence>
           <motion.div
