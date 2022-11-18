@@ -30,7 +30,7 @@ export const ModalProject = ():JSX.Element => {
                             <h1 className="text-2xl font-bold text-center mt-2">{project.title}</h1>
                         </header>
                         <section className="text-center my-5 px-3 md:px-12">
-                            <p className="dynamic-font">{project?.desc}</p>
+                            <p className="dynamic-font text-dark">{project?.desc}</p>
                         </section>
                         <footer className="flex items-center bg-white w-full h-10 text-center">
                             <Link href={project.link.github}>

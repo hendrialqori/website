@@ -33,7 +33,7 @@ const Blog: NextPage<ArticlesProps> = ({ articles }) => {
 
   const Articles = useMemo(()=> {
     return articles.filter(article => article.title?.toLocaleLowerCase()?.includes(search))
-      .sort((a, b) => b.created.localeCompare(a.created))
+      .sort((a, b) => b.id - a.id)
   }, [articles, search])
 
   const handleChange = 

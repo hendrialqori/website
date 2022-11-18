@@ -1,5 +1,6 @@
 // Home page
 interface article {
+    id: number;
     title: string;
     highlight: string;
     created: string;

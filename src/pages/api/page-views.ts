@@ -25,12 +25,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             'end-date': 'today',
             'start-date': startDate as any,
             ids: `ga:${process.env.GA_VIEW_ID}`,
-            metrics: 'ga:pageviews',
+            metrics: 'ga:pageViews',
             dimensions: 'ga:pagePath',
             filters: `ga:pagePath==${slug}`,
         })
 
-        const pageViews = response?.data?.totalsForAllResults['ga:pageviews']
+        const pageViews = response?.data?.totalsForAllResults['ga:pageViews']
 
         res.status(200).json({
             pageViews

@@ -15,34 +15,36 @@ const ByeIcon = () => {
 
 const Home: NextPage<ArticlesProps> = ({ articles }) => {
   const Articles = 
-    articles.sort((a, b) => b.created.localeCompare(a.created)).slice(0, 2)
+    articles.sort((a, b) => b.id - a.id).slice(0, 2)
 
   return (
     <Layout title='Home'>
       <>
       <NextSeo 
-            title='Hendri Alqori'
-            description='Blog, Project showcase and code snippets'
-            openGraph={{
-              type: 'website',
-              title: 'Hendri Alqori - Developer',
-              description: 'About Blog, Project showcase and code snippets',
-              url: 'https://hendrialqori.vercel.app',
-              siteName: 'Hendri Alqori',
-              images : [ 
-                {
-                  url: 'https://ik.imagekit.io/ils26chuk/og-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1668654017675',
-                  width: 1200,
-                  height: 630,
-                },
-              ]
-            }}
-          />
+        title='Hendri Alqori'
+        description='Blog, Project showcase and code snippets'
+        openGraph={{
+          type: 'website',
+          title: 'Hendri Alqori - Developer',
+          description: 'About Blog, Project showcase and code snippets',
+          url: 'https://hendrialqori.vercel.app',
+          siteName: 'Hendri Alqori',
+          images : [ 
+            {
+              url: 'https://ik.imagekit.io/ils26chuk/og-image.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1668654017675',
+              width: 1200,
+              height: 630,
+            },
+          ]
+        }}
+        />
         <header className='mt-1 md:mt-10' aria-label='up-side'>
           <ByeIcon />
           <h1 className='text-[2.1rem] font-extrabold'>Hendri Alqori</h1>
-          <p>A guy from Landak, Indonesia</p>
-          <p>Creative, Fast Leaner and love writte article</p>
+          <p className='font-semibold'>Frontend Developer</p>
+          <p className='text-gray-600 dark:text-gray-400'>
+            A guy from Landak, Indonesia <br /> who creative, fast leaner and love writte article
+          </p>
         </header>
 
         <section className='mt-16' aria-label='recent-post-container'>
