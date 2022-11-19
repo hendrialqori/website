@@ -42,11 +42,6 @@ html[data-mode='dark']  [aria-label='card-content'] h2
 	-webkit-text-fill-color: transparent;
   }
 
-/* [aria-label='card-wrapper']:hover {
-	filter: drop-shadow(0 0 .3em rgb(27, 165, 219));
-	transition: .4s linear;
-} */
-
 .mdx-wrapper p {
 	line-height: 1.75rem;
 	font-weight: 300;
@@ -70,14 +65,6 @@ html[data-mode='dark']  [aria-label='card-content'] h2
 
 .mdx-wrapper li {
 	margin-top: 10px;
-}
-
-.mdx-wrapper:has(em) em {
-	background-color: #18191a;
-	color: var(--light-mode);
-	border-radius: 4px;
-	padding: 1px 3px;
-	font-weight: 300;
 }
 
 .mdx-wrapper strong {

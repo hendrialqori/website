@@ -50,13 +50,14 @@ const Parent = () => {
 export default Parent;
 ```
 <br/>
-What do you thing about component code above ? There's nothing wrong with it all, 
-but **ChildrenComponent** could be re-render multiple times if name state is change,
-It happened bacause has data changes in the parent component.
-There's actually nothing wrong with the re-renders if no heavy process in **Children Component** it.
-Imagine has a heavy process let's say calling API from server with many data and i try create a function which calling **console.log()** 10.000.000 times. Its would be something bad for **optimization** your App. 
+What do you thing about component code above ?  
+There's nothing wrong with it all, but *ChildrenComponent* would be re-render multiple times if name state is change,
+It happened bacause has data changes in the parent component.  
 <br />
-The way to solve it is wrap **ChildrenComponent** with **memo**, example code below!  
+There's actually nothing wrong with the re-renders if no heavy process in *Children Component* it.
+Imagine has a heavy process let's say **calling API from server** with many data. Its would be something bad for **optimization** your App. 
+<br />
+The way to solve it is wrap *ChildrenComponent* with **memo**, example code below!  
 
 ```jsx:JSX
 import { memo } from 'react';
@@ -73,8 +74,8 @@ export const ChildrenComponent = memo(function _() => {
 })
 ```  
 <br />
-This way has enough for prevent re-renders problems, But i have own way to resolve this problem
-with **make separated component**.    
+This way has enough for prevent re-renders problems,  
+But i have own way to resolve this problem with make **separated component**
 
 ```jsx:JSX
 import { useState } from 'react'
@@ -113,4 +114,5 @@ export default Parent;
 <br />
 The above way make **ChildrenComponent** not re-renders again because there's nothing data changed in Parent component.
 This is one way of dealing with these re-renders problem with React component.  
-Thank you for reading!
+<br />
+**Thank you for reading!**

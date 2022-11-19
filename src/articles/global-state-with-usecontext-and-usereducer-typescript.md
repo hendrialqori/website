@@ -16,17 +16,18 @@ For small-scale applications we don't need global state, we could using local st
 But, what if the applications starts large?  
 start from here we need global state to handle all of states. We no longer pass a value or state through props, things that can give rise of terms **Props Drilling**.  
 
->**Prop drilling** is a situation where data is passed from one component through multiple interdependent components until you get to the component where the data is needed.  
+>**Prop drilling** *is a situation where data is passed from one component through multiple interdependent components until you get to the component where the data is needed.*
 
 <br />
-I suggest that you watch to video from PedroTech who discuss about Props Drilling and how to prevent it on him youtube channel, [Link video here!](https://www.youtube.com/watch?v=MCTB_w0Guso).  
+I suggest that you watch to video from **PedroTech** who discuss about Props Drilling and how to prevent it on him youtube channel, [Link video here!](https://www.youtube.com/watch?v=MCTB_w0Guso).  
 <br />
 There's 3 point to created global state centralized:
 - Store (An object which provides the state of the application)
 - Reducer (Function that takes an action and the previous state of the application and returns the new state)
-- Action creator (function that literally creates an action object)
+- Action creator (Function that literally creates an action object)
 <br />
-1. Store  
+**1. Store**  
+  
 Create file store.ts in your starting React App Project, initial state object, interface of state and action types.
   
 ```ts:store.ts
@@ -62,7 +63,8 @@ const initialValue = {
 we have done to created initial state, continue to create action reducer  
 <br />  
 
-2. Reducer  
+**2. Reducer**  
+  
 useReducer hook attend to handle this,
 ```ts:store.ts
 import { createContext, useContext, useReducer } from 'react'
@@ -143,7 +145,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 ```  
 <br />  
 
-3. Action  
+**3. Action**  
 
 Enter the stage of using the action creator, in JSX file import **ActionType** and **useStore** hook to get the initial value.  
 ```tsx:App.tsx
