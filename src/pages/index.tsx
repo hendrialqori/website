@@ -43,7 +43,7 @@ const Home: NextPage<ArticlesProps> = ({ articles }) => {
           <h1 className='text-[2.1rem] font-extrabold'>Hendri Alqori</h1>
           <p className='font-semibold'>Frontend Developer</p>
           <p className='text-gray-600 dark:text-gray-400'>
-            A guy from Landak, Indonesia <br /> who creative, fast leaner and love writte article
+            A guy from Landak, Indonesia <br /> who is creative, a fast learner and likes to write articles.
           </p>
         </header>
 
@@ -53,7 +53,7 @@ const Home: NextPage<ArticlesProps> = ({ articles }) => {
           </h3>
           <section className='flex flex-wrap gap-3'>
             {Articles.map((article, i) => (
-              <Link key={article.slug} href={'/' + article.slug }>
+              <Link key={article.slug} href={'/blog/' + article.slug }>
                 <article
                   className='flex gap-5 w-[100%] md:w-[48%] rounded-2xl bg-gray-100 dark:bg-light/5 p-6' 
                   aria-label='card-wrapper'

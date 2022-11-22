@@ -1,11 +1,11 @@
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 import Image from "next/image";
 import Link from 'next/link'
 import { FaLinkedin } from 'react-icons/fa'
 import { AiFillGithub } from 'react-icons/ai'
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 
-import type { SlugProps } from '../types';
+import type { SlugProps } from '../../types';
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 
 import matter from 'gray-matter'
@@ -16,6 +16,15 @@ import { MDXRemote } from 'next-mdx-remote'
 
 import rehypePrism from 'rehype-prism-plus';
 import rehypeCodeTitles from 'rehype-code-titles';
+
+import { 
+  FacebookShareButton,
+  FacebookIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+  WhatsappShareButton,
+  WhatsappIcon
+} from 'next-share'
 
 const Slug: NextPage<SlugProps> = ({ data, content }) => {
   return (
@@ -58,22 +67,32 @@ const Slug: NextPage<SlugProps> = ({ data, content }) => {
           />
         <article className='mt-1 md:mt-10'>
           <h1 className="text-3xl font-bold tracking-tight md:text-4xl text-center">{data.title}</h1>
-          <section className='w-max mx-auto flex flex-col items-center gap-1 my-8' aria-label='author'>
+          <header className='w-max mx-auto flex flex-col items-center gap-1 my-8' aria-label='author'>
             <Image src="/avatar.png" width={40} height={40} alt="author-avatar" />
             <h2 className="font-semibold dark:font-light text-sm">Hendri Alqori</h2>
             <div className='flex items-center gap-3 text-xs'>
               <p>{data.created}</p>
               <p>{data.timeRead}</p>
             </div>
-            <div className='flex items-center gap-3 mt-8' aria-label='social-media-anchor'>
-              <Link href={'https://www.linkedin.com/in/hendri-alqori-b87a52171/'}>
-                  <a><FaLinkedin className='text-2xl' /></a>
-              </Link>
-              <Link href={'https://github.com/hendrialqori'}>
-                  <a><AiFillGithub className='text-2xl' /></a>
-              </Link>
-            </div>
-          </section>
+            <section className='flex items-center gap-1 mt-7'>
+              {/* <h2 className='dynamic-font'>Share</h2> */}
+              <FacebookShareButton
+                url={`https://hendrialqori.vercel.app/blog/${data.slug}`}
+                quote={'next-share is a social share buttons for your next React apps.'}
+                hashtag={'#nextshare'}
+                >
+                <FacebookIcon size={25} round />
+              </FacebookShareButton>
+              <LinkedinShareButton 
+                  url={`https://hendrialqori.vercel.app/blog/${data.slug}`}>
+                <LinkedinIcon size={25} round />
+              </LinkedinShareButton>
+              <WhatsappShareButton 
+                  url={`https://hendrialqori.vercel.app/blog/${data.slug}`}>
+                <WhatsappIcon size={25} round />
+              </WhatsappShareButton>
+            </section>
+          </header>
           <section className='mdx-wrapper dynamic-font'>
             <MDXRemote {...content}/>
           </section>
