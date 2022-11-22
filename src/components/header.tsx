@@ -67,7 +67,7 @@ export const Navigate:React.FC = () => {
             ' 
             aria-label='nav-large-mode'>
             <CustomLink href='/'>Home</CustomLink>
-            <CustomLink activeSlug={router.pathname === '/[slug]'} href='/blog'>Blog</CustomLink>
+            <CustomLink activeSlug={router.pathname === '/blog/[slug]'} href='/blog'>Blog</CustomLink>
             <CustomLink href='/about'>About</CustomLink>
             <CustomLink href='/portfolio'>Portfolio</CustomLink>
             <CustomLink href='/snippet'>Snippets</CustomLink>

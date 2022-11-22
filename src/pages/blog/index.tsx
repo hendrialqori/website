@@ -1,11 +1,11 @@
 import React, { useState, useMemo, useCallback, memo } from 'react'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 import { IoIosSearch } from 'react-icons/io'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 
 import type { NextPage, GetStaticProps } from 'next'
-import type { ArticlesProps, InputSearchProps } from '../types'
+import type { ArticlesProps, InputSearchProps } from '../../types'
 
 import fs from 'fs'
 import path from 'path'
@@ -64,13 +64,13 @@ const Blog: NextPage<ArticlesProps> = ({ articles }) => {
           />
         <header className='mt-5'>
           <h1 className='text-3xl font-bold'>Blog</h1>
-          <p className='text-black dark:text-light/70'>I write blog, Share a bit of my knowladge about web developement relative topics, Enjoy it fellas!</p>
+          <p className='text-black dark:text-light/70'>I write blog, Share a bit of my knowledge about web development relative topics, Enjoy it fellas!</p>
         </header>
         <InputSearch value={search} handleChange={handleChange} />
         <section className='grid gap-10 mt-12' aria-label='article-wrapper'>
           {Articles.length === 0 ? <span className='text-base text-black dark:text-white'>No article :(</span> : 
            Articles.map((article, i) => (
-            <Link key={i} href={'/' + article.slug }>
+            <Link key={i} href={'/blog/' + article.slug }>
                 <article 
                   aria-label='card-wrapper'
                   role={'button'}
