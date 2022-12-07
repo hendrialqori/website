@@ -5,3 +5,6 @@ Made with some tech who is popular,
 - MDX Markdown  
 
 and deploy on vercel!
+
+**Warning**❗❗❗
+Anyone can forking, but don't forget give me star on this repo!
