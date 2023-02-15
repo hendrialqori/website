@@ -1,24 +1,25 @@
 ---
 id: 2
-title: 'Powerfull of useRef'
-highlight: 'To handle a state often we using useState, but useRef can replace it!'
-tag: '#reactJs'
-created: 'Oct, 22 2022'
-timeRead: '5 minute read'
-slug: 'powerfull-of-useref'
+title: "Powerfull of useRef"
+highlight: "To handle a state often we using useState, but useRef can replace it!"
+tag: "#reactJs"
+created: "Oct, 22 2022"
+timeRead: "5 minute read"
+slug: "powerfull-of-useref"
 ---
 
-> ```useRef``` returns a mutable ref object whose *.current* property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component. [[reactjs docs]](https://reactjs.org/docs/hooks-reference.html#useref)  
+> `useRef` returns a mutable ref object whose _.current_ property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component. [[reactjs docs]](https://reactjs.org/docs/hooks-reference.html#useref)
 
-Essentially, useRef is like a *“box”* that can hold a mutable value in its **.current** property.
+Essentially, useRef is like a _“box”_ that can hold a mutable value in its **.current** property.
 If on vanilla javascript, useRef like **document.querySelector()**
 <br />
-Its mean we can access property which exists, as example on input tag had *.value* or *.focus* property.
+Its mean we can access property which exists, as example on input tag had _.value_ or _.focus_ property.
 
 ```js:Vanilla
 const input = document.querySelector('.input')
 document.getElementById('root').innerHTML = input.value;
 ```
+
 <br/>
 
 ```jsx:React
@@ -37,7 +38,8 @@ const InputComponent = () => {
   )
 }
 ```
-In this case, we try'na refactory code below using *useRef* previously used *useState*. Les't code!
+
+In this case, we try'na refactory code below using _useRef_ previously used _useState_. Les't code!
 <br/>
 
 ```jsx:JSX
@@ -46,7 +48,7 @@ import { useState } from 'react';
 const InputComponent = () => {
   const [usename, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  
+
   const handleSubmit = () => {
     console.log({ username, password })
   }
@@ -75,6 +77,7 @@ const InputComponent = () => {
     )
 }
 ```
+
 At first glance nothing is wrong with this code all walking normally, but if you want make you own component do not re-render even thought value on state changes, useRef is choices.
 
 ```jsx:JSX
@@ -104,4 +107,5 @@ const InputComponent = () => {
     )
 }
 ```
-Look a like more clean than using *useState*. **Thank you for reading!**
+
+Look a like more clean than using _useState_. **Thank you for reading!**
