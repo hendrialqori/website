@@ -6,6 +6,7 @@ tag: "#reactStateManeger"
 created: "Nov, 18 2022"
 timeRead: "10 minute read"
 slug: "global-state-with-usecontext-and-usereducer-typescript"
+isPublish: true
 ---
 
 There is a lot of library in React JS to handle states, especially **global states**, which are the most important topic to master for frontend developers

@@ -30,7 +30,10 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Home({ articles }: ArticlesProps) {
-  const Articles = articles.sort((a, b) => b.id - a.id).slice(0, 2);
+  const Articles = articles
+    .filter((article) => article.isPublish === true)
+    .sort((a, b) => b.id - a.id)
+    .slice(0, 2);
 
   return (
     <Layout title="Home">

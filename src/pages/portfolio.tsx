@@ -5,9 +5,13 @@ import { Modal as ModalProject } from "@/components/modal";
 import { Icon } from "@/components/icon/wrapper";
 import { Projects } from "@/utils/projects";
 import { NextSeo } from "next-seo";
+import { AnimatePresence } from "framer-motion";
 
 export default function Portfolio() {
-  const { dispatch } = useStore();
+  const {
+    dispatch,
+    state: { isShowModalProject },
+  } = useStore();
 
   const handleShowProject = (P: any): void => {
     dispatch({ type: ActionTypes.SHOWMODALPROJECT });
@@ -20,7 +24,10 @@ export default function Portfolio() {
   return (
     <Layout title="Portfolio">
       <>
-        <ModalProject />
+        <AnimatePresence>
+          {isShowModalProject ? <ModalProject /> : null}
+        </AnimatePresence>
+
         <NextSeo
           title="Portfolio -- Hendri Alqori"
           description="Personal portfolio, Some App created with technology who i mastered"

@@ -4,7 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
 
-import type { NextPage, GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import type { ArticlesProps, InputSearchProps } from "@/types";
 
 import fs from "fs";
@@ -35,6 +35,7 @@ export default function Blog({ articles }: ArticlesProps) {
 
   const Articles = useMemo(() => {
     return articles
+      .filter((article) => article.isPublish === true)
       .filter((article) => article.title?.toLocaleLowerCase()?.includes(search))
       .sort((a, b) => b.id - a.id);
   }, [articles, search]);

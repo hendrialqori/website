@@ -7,6 +7,7 @@ interface article {
   tag: string;
   timeRead: string;
   slug: string;
+  isPublish: boolean;
 }
 
 export interface ArticlesProps {

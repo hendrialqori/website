@@ -6,6 +6,7 @@ tag: "#reactJS"
 created: "Oct, 20 2022"
 timeRead: "5 minute read"
 slug: "dont-hurry-up-wrap-your-component-with-memo-using-this-instead"
+isPublish: true
 ---
 
 ```jsx:JSX

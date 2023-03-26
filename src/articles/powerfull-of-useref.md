@@ -6,6 +6,7 @@ tag: "#reactJs"
 created: "Oct, 22 2022"
 timeRead: "5 minute read"
 slug: "powerfull-of-useref"
+isPublish: true
 ---
 
 > `useRef` returns a mutable ref object whose _.current_ property is initialized to the passed argument (initialValue). The returned object will persist for the full lifetime of the component. [[reactjs docs]](https://reactjs.org/docs/hooks-reference.html#useref)

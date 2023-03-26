@@ -55,7 +55,7 @@ export const Navbar: React.FC = () => {
               </ALink>
               <ALink href="/about">About</ALink>
               <ALink href="/portfolio">Portfolio</ALink>
-              <ALink href="/snippet">Snippets</ALink>
+              {/* <ALink href="/snippet">Snippets</ALink> */}
             </nav>
             <button
               onClick={() => setMobileMode((P) => !P)}
