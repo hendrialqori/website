@@ -37,7 +37,7 @@ export default function Blog({ articles }: ArticlesProps) {
     return articles
       .filter((article) => article.isPublish === true)
       .filter((article) => article.title?.toLocaleLowerCase()?.includes(search))
-      .sort((a, b) => b.id - a.id);
+      .sort((a, b) => a.id - b.id);
   }, [articles, search]);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {

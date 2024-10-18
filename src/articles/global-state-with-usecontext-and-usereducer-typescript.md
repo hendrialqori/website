@@ -3,7 +3,7 @@ id: 3
 title: "Global state with useContext and useReducer typescript"
 highlight: "Getting started react state maneger with context API and useReducer hook"
 tag: "#reactStateManeger"
-created: "Nov, 18 2022"
+created: "Feb, 23 2024"
 timeRead: "10 minute read"
 slug: "global-state-with-usecontext-and-usereducer-typescript"
 isPublish: true

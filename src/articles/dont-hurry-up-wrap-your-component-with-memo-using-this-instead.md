@@ -3,7 +3,7 @@ id: 1
 title: Don't hurry up wrap your component with memo, using this instead
 highlight: "While your have children component re-renders because has data change on parent component? using this way instead memo "
 tag: "#reactJS"
-created: "Oct, 20 2022"
+created: "Aug, 12 2024"
 timeRead: "5 minute read"
 slug: "dont-hurry-up-wrap-your-component-with-memo-using-this-instead"
 isPublish: true

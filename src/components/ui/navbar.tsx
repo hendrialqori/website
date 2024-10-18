@@ -53,8 +53,8 @@ export const Navbar: React.FC = () => {
               >
                 Blog
               </ALink>
-              <ALink href="/about">About</ALink>
-              <ALink href="/portfolio">Portfolio</ALink>
+              {/* <ALink href="/about">About</ALink> */}
+              {/* <ALink href="/portfolio">Portfolio</ALink> */}
               {/* <ALink href="/snippet">Snippets</ALink> */}
             </nav>
             <button
@@ -90,9 +90,9 @@ export const Navbar: React.FC = () => {
               <ALink activeSlug={router.pathname === "/[slug]"} href="/blog">
                 Blog
               </ALink>
-              <ALink href="/about">About</ALink>
-              <ALink href="/portfolio">Portfolio</ALink>
-              <ALink href="/snippet">Snippets</ALink>
+              {/* <ALink href="/about">About</ALink> */}
+              {/* <ALink href="/portfolio">Portfolio</ALink>
+              <ALink href="/snippet">Snippets</ALink> */}
             </nav>
           </motion.section>
         </AnimatePresence>
